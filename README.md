@@ -42,3 +42,20 @@ cd kidney-stone-prediction '''
 <pre> 
 pip install -r requirements.txt
 </pre>
+3. Run the Web App
+<pre>
+python app.py
+</pre>
+4. Access the Web App: 
+- Open your browser and navigate to http://127.0.0.1:5000/predictiondata
+5. Input Lab Data: 
+- Enter lab results such as specific gravity, pH level, osmolality, and others into the form and click "Predict" to get the prediction.
+## Dataset
+#### The dataset contains features:
+- Specific Gravity
+- pH Level
+- Osmolality
+- Conductivity
+- Urea Concentration
+- Calcium Concentration
+These features are used to predict the likelihood of kidney stone formation.
