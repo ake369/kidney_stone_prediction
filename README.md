@@ -1,4 +1,4 @@
-## End-to-End User Interface Based ML Project for Predicting Kidney Stone Existence
+## AI-Driven Interface for Early Detection of Kidney Stones: A Complete ML Solution
 This project aims to predict the possible existence of kidney stones using a lab report dataset. It features an end-to-end machine learning pipeline, starting from data preprocessing to the deployment of a user-friendly interface for prediction. The project integrates essential data science activities such as data preprocessing, feature engineering, model training, and evaluation, all wrapped in a web-based interface to enhance user interaction.
 ## Project Overview
 ## Goal
