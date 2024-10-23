@@ -49,7 +49,7 @@ class CustomData:
                 "osmolality": [self.osmolality],
                 "conductivity": [self.conductivity],
                 "urea_concentration": [self.urea_concentration],
-                "hypertcalcium_concentration":[self.calcium_concentration]
+                "calcium_concentration":[self.calcium_concentration]
             }
             return pd.DataFrame(custom_data_input_dict)
 
