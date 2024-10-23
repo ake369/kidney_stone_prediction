@@ -47,7 +47,7 @@ pip install -r requirements.txt
 python app.py
 </pre>
 4. Access the Web App: 
-- Open your browser and navigate to http://127.0.0.1:5000/predictiondata
+- Open your browser and navigate to http://127.0.0.1:5000/predictdata
 5. Input Lab Data: 
 - Enter lab results such as specific gravity, pH level, osmolality, and others into the form and click "Predict" to get the prediction.
 ## Dataset
