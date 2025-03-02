@@ -37,6 +37,7 @@ The primary objective is to develop a machine learning model that can predict th
 1. Clone the Repository:
 ```bash
 git clone https://github.com/Noah369-Create/kidney-stone-prediction.git cd kidney-stone-prediction
+```
 3. Install Dependencies:
 ```bash 
 pip install -r requirements.txt
