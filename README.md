@@ -35,14 +35,14 @@ The primary objective is to develop a machine learning model that can predict th
 - Prediction: The best-performing model is integrated into the web app to provide real-time kidney stone predictions based on user input.
 ### How to Run the Project
 1. Clone the Repository:
-2. ``` bash git clone https://github.com/Noah369-Create/kidney-stone-prediction.git cd kidney-stone-prediction ```
+2. ```bash git clone https://github.com/Noah369-Create/kidney-stone-prediction.git cd kidney-stone-prediction
 </pre>
 3. Install Dependencies:
-<pre> 
+```bash 
 pip install -r requirements.txt
 </pre>
 3. Run the Web App
-<pre>
+```bash
 python app.py
 </pre>
 4. Access the Web App: 
