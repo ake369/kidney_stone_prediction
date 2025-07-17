@@ -32,20 +32,12 @@ def predict_datapoint():
         pred_df = data.get_data_as_data_frame()
 
         # Create prediction pipeline instance
+
         predict_pipeline = PredictPipeline()
         results = predict_pipeline.predict(pred_df)
+        predicted_class = int(results[0] >= 0.5)  # 1 if >= 0.5 else 0
 
-        # Round the result to 2 decimal places
-        rounded_result = round(results[0], 2)
-
-        # Convert the result to string based on the condition
-        if rounded_result >= 0.5:
-            result_string = "NEGATIVE(-)"
-        else:
-            result_string = "POSITIVE(+)"
-
-        # Pass the result_string to the template
-        return render_template('home.html', results=result_string)
+    return render_template('home.html', results=predicted_class)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", debug=True)
