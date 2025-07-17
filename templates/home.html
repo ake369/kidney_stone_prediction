@@ -11,10 +11,10 @@
 
         .header {
             background: linear-gradient(120deg, #00c6ff 0%, #0072ff 100%);
-            padding: 20px;
+            padding: 15px;
             text-align: center;
             color: white;
-            font-size: 28px;
+            font-size: 24px;
             letter-spacing: 1px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
         }
@@ -22,90 +22,82 @@
         .container {
             display: flex;
             justify-content: center;
-            align-items: center;
+            align-items: flex-start;
             min-height: 100vh;
             padding: 20px;
         }
 
         .login {
             background-color: white;
-            padding: 40px;
+            padding: 20px 25px;
             border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-            max-width: 800px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 700px;
             width: 100%;
             text-align: center;
         }
 
         h1 {
             color: #0072ff;
-            font-size: 28px;
-            margin-bottom: 30px;
+            font-size: 22px;
+            margin-bottom: 20px;
             text-transform: uppercase;
-            font-weight: bold;
         }
 
         .form-label {
             font-weight: 600;
+            font-size: 14px;
             color: #555;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
 
         .form-control {
             width: 100%;
-            padding: 12px;
-            border-radius: 8px;
+            padding: 8px 10px;
+            font-size: 14px;
+            border-radius: 6px;
             border: 1px solid #ccc;
-            margin-bottom: 20px;
-            transition: all 0.3s ease;
+            margin-bottom: 12px;
         }
 
         .form-control:focus {
             border-color: #0072ff;
-            box-shadow: 0 0 8px rgba(0, 114, 255, 0.3);
+            box-shadow: 0 0 5px rgba(0, 114, 255, 0.3);
         }
 
         .btn-primary {
             width: 100%;
-            padding: 15px;
+            padding: 12px;
             background: linear-gradient(120deg, #00c6ff 0%, #0072ff 100%);
             border: none;
-            border-radius: 8px;
+            border-radius: 6px;
             color: white;
             font-weight: bold;
-            font-size: 18px;
+            font-size: 16px;
             cursor: pointer;
-            transition: all 0.3s ease;
         }
 
         .btn-primary:hover {
             background: linear-gradient(120deg, #0072ff 0%, #00c6ff 100%);
-            transform: translateY(-2px);
-            box-shadow: 0 8px 15px rgba(0, 114, 255, 0.3);
-        }
-
-        h2 {
-            margin-top: 30px;
-            color: #0072ff;
-            font-size: 24px;
-        }
-
-        legend {
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: #0072ff;
+            transform: translateY(-1px);
+            box-shadow: 0 6px 12px rgba(0, 114, 255, 0.2);
         }
 
         .form-row {
             display: flex;
-            gap: 20px;
-            justify-content: space-between;
+            gap: 15px;
             flex-wrap: wrap;
         }
 
         .form-column {
             flex: 1;
-            min-width: 45%;
+            min-width: 48%;
+        }
+
+        .result-box {
+            margin-top: 15px;
+            font-size: 16px;
+            font-weight: bold;
         }
 
         @media (max-width: 768px) {
@@ -114,11 +106,11 @@
             }
 
             .login {
-                padding: 30px;
+                padding: 20px;
             }
 
             h1 {
-                font-size: 24px;
+                font-size: 20px;
             }
         }
     </style>
@@ -131,50 +123,43 @@
     <div class="container">
         <div class="login">
             <h1>Input Your Lab Report</h1>
-       
             <form action="{{ url_for('predict_datapoint')}}" method="post">
                 <div class="form-row">
                     <div class="form-column">
-                        <div class="mb-3">
-                            <label class="form-label">Specific Gravity</label>
-                            <input class="form-control" type="number" step="0.01" name="specific_gravity" placeholder="Enter specific gravity" required />
-                        </div>
+                        <label class="form-label">Specific Gravity</label>
+                        <input class="form-control" type="number" step="0.01" name="specific_gravity" required />
 
-                        <div class="mb-3">
-                            <label class="form-label">pH Level</label>
-                            <input class="form-control" type="number" step="0.01" name="ph_level" placeholder="Enter pH level" required />
-                        </div>
+                        <label class="form-label">pH Level</label>
+                        <input class="form-control" type="number" step="0.01" name="ph_level" required />
 
-                        <div class="mb-3">
-                            <label class="form-label">Osmolality</label>
-                            <input class="form-control" type="number" step="0.01" name="osmolality" placeholder="Enter osmolality" required />
-                        </div>
-
-                        <div class="mb-3">
-                            <label class="form-label">Conductivity</label>
-                            <input class="form-control" type="number" step="0.01" name="conductivity" placeholder="Enter conductivity" required />
-                        </div>
+                        <label class="form-label">Osmolality</label>
+                        <input class="form-control" type="number" step="0.01" name="osmolality" required />
                     </div>
 
                     <div class="form-column">
-                        <div class="mb-3">
-                            <label class="form-label">Urea Concentration</label>
-                            <input class="form-control" type="number" step="0.01" name="urea_concentration" placeholder="Enter urea concentration" required />
-                        </div>
+                        <label class="form-label">Conductivity</label>
+                        <input class="form-control" type="number" step="0.01" name="conductivity" required />
 
-                        <div class="mb-3">
-                            <label class="form-label">Calcium Concentration</label>
-                            <input class="form-control" type="number" step="0.01" name="calcium_concentration" placeholder="Enter calcium concentration" required />
-                        </div>
+                        <label class="form-label">Urea Concentration</label>
+                        <input class="form-control" type="number" step="0.01" name="urea_concentration" required />
+
+                        <label class="form-label">Calcium Concentration</label>
+                        <input class="form-control" type="number" step="0.01" name="calcium_concentration" required />
+
+                        <input class="btn-primary" type="submit" value="Predict Your Kidney Stone Status" />
                     </div>
-                </div>
-
-                <div class="mb-3">
-                    <input class="btn btn-primary" type="submit" value="Predict Your Kidney Stone Status" />
                 </div>
             </form>
 
-            <h2>The prediction for possible Kidney Stone is {{results}}</h2>
+            {% if results == 1 %}
+                <div class="result-box" style="color: red;">
+                    🔴 You may have signs consistent with <strong>Kidney Stones</strong>. Please consult a healthcare professional.
+                </div>
+            {% elif results == 0 %}
+                <div class="result-box" style="color: green;">
+                    🟢 No significant indicators of <strong>Kidney Stones</strong> detected. Stay healthy!
+                </div>
+            {% endif %}
         </div>
     </div>
 </body>
